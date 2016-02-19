@@ -23,6 +23,7 @@ DerivedData
 .bundle
 
 .idea/*
+Example/.idea/*
 Podfile.lock
 
 Carthage

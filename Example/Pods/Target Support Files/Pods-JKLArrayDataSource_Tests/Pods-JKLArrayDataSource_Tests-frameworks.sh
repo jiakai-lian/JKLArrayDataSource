@@ -86,14 +86,10 @@ strip_invalid_archs() {
 if [[ "$CONFIGURATION" == "Debug" ]]; then
   install_framework "Pods-JKLArrayDataSource_Tests/JKLArrayDataSource.framework"
   install_framework "Pods-JKLArrayDataSource_Tests/Expecta.framework"
-  install_framework "Pods-JKLArrayDataSource_Tests/Expecta_Snapshots.framework"
-  install_framework "Pods-JKLArrayDataSource_Tests/FBSnapshotTestCase.framework"
   install_framework "Pods-JKLArrayDataSource_Tests/Specta.framework"
 fi
 if [[ "$CONFIGURATION" == "Release" ]]; then
   install_framework "Pods-JKLArrayDataSource_Tests/JKLArrayDataSource.framework"
   install_framework "Pods-JKLArrayDataSource_Tests/Expecta.framework"
-  install_framework "Pods-JKLArrayDataSource_Tests/Expecta_Snapshots.framework"
-  install_framework "Pods-JKLArrayDataSource_Tests/FBSnapshotTestCase.framework"
   install_framework "Pods-JKLArrayDataSource_Tests/Specta.framework"
 fi

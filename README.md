@@ -17,7 +17,7 @@ JKLArrayDataSource is available through [CocoaPods](http://cocoapods.org). To in
 it, simply add the following line to your Podfile:
 
 ```ruby
-pod "JKLArrayDataSource"
+pod "JKLArrayDataSource" :git =>  'https://github.com/jiakai-lian/JKLArrayDataSource.git'
 ```
 
 ## Author

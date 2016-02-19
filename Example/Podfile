@@ -1,7 +1,5 @@
 source 'https://github.com/CocoaPods/Specs.git'
 use_frameworks!
-inhibit_all_warnings!
-
 
 target 'JKLArrayDataSource_Example', :exclusive => true do
   pod 'JKLArrayDataSource', :path => '../'
@@ -12,6 +10,6 @@ target 'JKLArrayDataSource_Tests', :exclusive => true do
 
   pod 'Specta'
   pod 'Expecta'
-  pod 'FBSnapshotTestCase'
-  pod 'Expecta+Snapshots'
+#  pod 'FBSnapshotTestCase'
+#  pod 'Expecta+Snapshots'
 end
