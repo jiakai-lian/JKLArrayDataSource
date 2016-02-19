@@ -1,0 +1,6 @@
+framework module JKLArrayDataSource {
+  umbrella header "JKLArrayDataSource-umbrella.h"
+
+  export *
+  module * { export * }
+}

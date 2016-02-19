@@ -1,5 +1,7 @@
 source 'https://github.com/CocoaPods/Specs.git'
 use_frameworks!
+inhibit_all_warnings!
+
 
 target 'JKLArrayDataSource_Example', :exclusive => true do
   pod 'JKLArrayDataSource', :path => '../'
