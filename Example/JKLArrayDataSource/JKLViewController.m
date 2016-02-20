@@ -23,9 +23,11 @@
     [super viewDidLoad];
 	// Do any additional setup after loading the view, typically from a nib.
     
-    self.tableView.dataSource = self.dataSource = [JKLArrayDataSource sourceWithItems:@[@"item1",@"item2",@"item3",@"item4",@"item5"] cellIdentifier:@"Cell" cellConfigureBlock:^(UITableViewCell * _Nonnull cell, id  _Nonnull item, NSIndexPath * _Nonnull indexPath) {
-        cell.textLabel.text = item;
-    }];
+    self.tableView.dataSource = self.dataSource = [JKLArrayDataSource tableViewDataSourceWithItems:@[@"item1", @"item2", @"item3", @"item4", @"item5"]
+                                                                                    cellIdentifier:@"Cell"
+                                                                                cellConfigureBlock:^(UITableViewCell *_Nonnull cell, id _Nonnull item, NSIndexPath *_Nonnull indexPath) {
+                                                                                    cell.textLabel.text = item;
+                                                                                }];
 }
 
 - (void)didReceiveMemoryWarning

@@ -18,28 +18,61 @@
 #pragma mark - Public Properties
 
 - (id <UITableViewDataSource>)tableViewDataSource {
-    return (id <UITableViewDataSource>) self;
+    if (self.tableViewCellConfigureBlock) {
+        return (id <UITableViewDataSource>) self;
+    }
+
+    return nil;
+}
+
+- (id <UICollectionViewDataSource>)collectionViewDataSource {
+    if (self.collectionViewCellConfigureBlock) {
+        return (id <UICollectionViewDataSource>) self;
+    }
+
+    return nil;
 }
 
 - (instancetype)initWithItems:(NSArray *)items
                cellIdentifier:(NSString *)cellIdentifier
-           cellConfigureBlock:(CellConfigureBlock)cellConfigureBlock {
+           cellConfigureBlock:(TableViewCellConfigureBlock)tableViewCellConfigureBlock {
     self = [super init];
     if (self) {
-        _items              = [items copy];
-        _cellIdentifier     = [cellIdentifier copy];
-        _cellConfigureBlock = [cellConfigureBlock copy];
+        _items                       = [items copy];
+        _cellIdentifier              = [cellIdentifier copy];
+        _tableViewCellConfigureBlock = [tableViewCellConfigureBlock copy];
     }
 
     return self;
 }
 
-+ (instancetype)sourceWithItems:(NSArray *)items
-                 cellIdentifier:(NSString *)cellIdentifier
-             cellConfigureBlock:(CellConfigureBlock)cellConfigureBlock {
++ (instancetype)tableViewDataSourceWithItems:(NSArray *_Nullable)items
+                                            cellIdentifier:(NSString *_Nullable)cellIdentifier
+                                        cellConfigureBlock:(_Nullable TableViewCellConfigureBlock)tableViewCellConfigureBlock {
     return [[self alloc] initWithItems:items
                         cellIdentifier:cellIdentifier
-                    cellConfigureBlock:cellConfigureBlock];
+                    cellConfigureBlock:tableViewCellConfigureBlock];
+}
+
+- (instancetype)   initWithItems:(NSArray *)items
+                  cellIdentifier:(NSString *)cellIdentifier
+collectionViewCellConfigureBlock:(CollectionViewCellConfigureBlock)collectionViewCellConfigureBlock {
+    self = [super init];
+    if (self) {
+        _items                            = [items copy];
+        _cellIdentifier                   = [cellIdentifier copy];
+        _collectionViewCellConfigureBlock = [collectionViewCellConfigureBlock copy];
+    }
+
+    return self;
+}
+
++ (instancetype)collectionViewDataSourceWithItems:(NSArray *_Nullable)items
+                                                      cellIdentifier:(NSString *_Nullable)cellIdentifier
+                                    collectionViewCellConfigureBlock:(_Nullable CollectionViewCellConfigureBlock)collectionViewCellConfigureBlock {
+    return [[self alloc] initWithItems:items
+                        cellIdentifier:cellIdentifier
+      collectionViewCellConfigureBlock:collectionViewCellConfigureBlock];
 }
 
 
